@@ -1,0 +1,106 @@
+<div class="container">
+    <div class="panel panel-primary heading-wrapper">       
+    </div>
+    <div class="form-wrapper">
+        <div class="example-container" linear>
+            <form [formGroup]="authUserForm" autocomplete="off" #userForm="ngForm" (ngSubmit)="addUser(userForm)">
+                <div>
+                    <div id="userDiv">
+                        <span id="userSpan">
+                            User Details
+                        </span>
+                    </div>
+                    <div class="row">
+                       <mat-form-field class="input-field col-lg-4 col-md-6 col-sm-6">
+                           <input matInput 
+                            placeholder="First Name" 
+                            formControlName="firstName"
+                            required>
+                            <mat-error *ngIf="hasError('firstName', 'required')">First Name is required!</mat-error>
+                            <mat-error *ngIf="authUserForm.controls['firstName'].hasError('pattern')">First Name should accept only characters!</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="input-field col-lg-4 col-md-6 col-sm-6">
+                            <input matInput 
+                            placeholder="Last Name" 
+                            formControlName="lastName"
+                            required>
+                            <mat-error *ngIf="hasError('lastName', 'required')">Last Name is required!</mat-error>
+                            <mat-error *ngIf="authUserForm.controls['lastName'].hasError('pattern')">Last Name should accept only characters!</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="input-field col-lg-4 col-md-6 col-sm-6">
+                            <input matInput 
+                            placeholder="Email ID" 
+                            formControlName="email"
+                            required>
+                            <mat-error *ngIf="hasError('email', 'required')">Email ID is required!</mat-error>
+                            <mat-error *ngIf="hasError('email', 'pattern')">Please enter valid email ID!</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="ngxTelNo input-field col-lg-4 col-md-6 col-sm-6 abckk">
+                             <mat-label>Phone Number</mat-label>
+                             <ngx-mat-intl-tel-input formControlName="phoneNumber" autocomplete="off" [preferredCountries]="['in','sg']" [enableSearch]="true"
+                                name="phoneNumber" #phoneNumber  required>
+                            </ngx-mat-intl-tel-input>
+                            <mat-hint>eg : {{phoneNumber.selectedCountry.placeHolder}}</mat-hint>
+                            <mat-error *ngIf="authUserForm.controls['phoneNumber'].hasError('required')">Phone Number is required!</mat-error>
+                            <mat-error *ngIf="authUserForm.controls['phoneNumber']?.errors?.validatePhoneNumber">Invalid Number</mat-error> 
+                        </mat-form-field>
+                        <mat-form-field class="input-field col-lg-4 col-md-6 col-sm-6" #id>
+                            <mat-select #type formControlName="role" 
+                            placeholder="User Type" 
+                            (ngModelChange)="roleChange($event,userForm)"
+                            required>
+                               <mat-option 
+                                    value="subadmin"
+                                    *ngIf='role === "sysadmin" || role === "subadmin"'>
+                                    Sub Admin
+                                </mat-option>
+                                <mat-option 
+                                    value="super_admin"
+                                    *ngIf='role === "super_admin"'>
+                                    System Admin
+                                </mat-option>
+                                <mat-option 
+                                    value="agent"
+                                    *ngIf='role === "agent"'>
+                                    Kyc Agent
+                                </mat-option>
+                                <mat-option 
+                                    value="admin"
+                                    *ngIf="(role == 'admin' && entity == 'organization')">
+                                     Admin
+                                </mat-option>
+                                <mat-option 
+                                    value="manager"
+                                    *ngIf="(role == 'admin' && entity == 'organization')
+                                    || (role == 'manager' && entity == 'organization')
+                                    || (role == 'manager' && entity == 'affiliate')">
+                                     User
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="hasError('role', 'required')">User Type is required!</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="input-field col-lg-4 col-md-6 col-sm-6">
+                            <input matInput placeholder="User Role" formControlName="roleName">
+                        </mat-form-field>
+                       <mat-form-field class="input-field col-lg-4 col-md-6 col-sm-6" *ngIf="!(admin || superManager || affiliateManager || sysadmin || subadmin)">
+                            <mat-select placeholder="Branch" 
+                            formControlName="departmentId"
+                            (ngModelChange)="departmentChange($event)"
+                            [required]="required"
+                            >
+                               <mat-option *ngFor="let department of departments;" [value]='department._id'>{{department.name}}</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="departmentError">Please select branch!</mat-error>
+                        </mat-form-field>
+                        </div>
+                    </div>
+                
+                <div class="action-btns text-center">
+                    <button mat-raised-button class="subBtn" *ngIf="!required" [disabled]="required">Add</button>
+                    <button mat-raised-button class="subBtn" *ngIf="required" [disabled]="!userForm.form.valid">Add</button>
+                    <button type="button" mat-raised-button class="cancelBtn" (click)="goBack()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

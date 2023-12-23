@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install: 
+    commands:
+      - npm i npm@latest -g
+      - pip install --upgrade pip
+      - pip install --upgrade awscli
+      
+      
+  pre_build:
+    commands:
+      - npm install --legacy-peer-deps
+
+      
+  build:
+    commands:
+      #- npm run build --prod
+      - npm run build-prod
+      - aws s3 sync ./dist/snapperCertificate s3://$DeployBucket/dist/snapperCertificate
