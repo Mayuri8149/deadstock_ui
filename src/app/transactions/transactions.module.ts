@@ -3,7 +3,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/cor
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
+
 import { PpBreadcrumbsModule } from 'pp-breadcrumbs';
 import { MaterialModule } from '../material-module';
 import { ApiService } from '../services/api.service';
@@ -32,7 +32,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     ReactiveFormsModule,
     FlexLayoutModule,
     PpBreadcrumbsModule,
-    PdfViewerModule,
+    
     Ng2SearchPipeModule,    
     ModalModule.forRoot(),
   ],

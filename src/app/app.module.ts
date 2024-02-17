@@ -22,7 +22,6 @@ import { BnNgIdleService } from 'bn-ng-idle'; // import bn-ng-idle service
 // import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
 import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
 import { ChartsModule } from 'ng2-charts';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { NgxMatIntlTelInputModule } from 'ngx-mat-intl-tel-input';
@@ -152,7 +151,7 @@ export function getAuthServiceConfigs() {
         MatProgressBarModule,
         // JwSocialButtonsModule,
         PpBreadcrumbsModule,
-        PdfViewerModule,
+        
         RecaptchaFormsModule,
         RecaptchaModule,
         NgxMatIntlTelInputModule,
@@ -162,8 +161,7 @@ export function getAuthServiceConfigs() {
         ModalModule.forRoot(),
         JwtModule.forRoot({
             config: {
-                tokenGetter: tokenGetter,
-                allowedDomains: [environment.baseUrl]
+                tokenGetter: tokenGetter
             }
         }),
         MatAutocompleteModule,

@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
+
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { NgxEchartsModule } from 'ngx-echarts';
@@ -31,7 +31,7 @@ export function chartModule(): any {
 }
 @NgModule({
   imports: [
-    PdfViewerModule,
+    
     Ng2SearchPipeModule,
     CommonModule,
     OrganizationsRoutingModule,

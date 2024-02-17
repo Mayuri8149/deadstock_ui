@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
+
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { NgxMatIntlTelInputModule } from 'ngx-mat-intl-tel-input';
 import { PpBreadcrumbsModule } from 'pp-breadcrumbs';
@@ -33,7 +33,7 @@ import { UsersRoutingModule } from './users-routing.module';
     UserAccessComponent
   ],
   imports: [
-    PdfViewerModule,
+    
     CommonModule,
     UsersRoutingModule,
     FontAwesomeModule,

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
+
 import { PpBreadcrumbsModule } from 'pp-breadcrumbs';
 import { MaterialModule } from '../material-module';
 import { ApiService } from '../services/api.service';
@@ -35,7 +35,7 @@ import { TransactionTypeRoutingModule } from './transaction-type-routing.module'
     ReactiveFormsModule,
     FlexLayoutModule,
     PpBreadcrumbsModule,
-    PdfViewerModule,
+    
   ],
   providers: [
     AuthService,

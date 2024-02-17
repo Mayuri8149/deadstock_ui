@@ -41,7 +41,6 @@
               "rxjs-compat",
               "moment-timezone",
               "jw-angular-social-buttons",
-              "ng2-pdf-viewer",
               "angular-6-social-login",
               "aws-sdk"
            ],
@@ -55,6 +54,9 @@
           },
           "configurations": {
             "production": {
+              "experiments": {
+                "topLevelAwait": true
+            },
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -88,6 +90,9 @@
           },
           "configurations": {
             "production": {
+              "experiments": {
+                "topLevelAwait": true
+            },
               "browserTarget": "snapperCertificate:build:production"
             }
           }
@@ -146,6 +151,9 @@
           },
           "configurations": {
             "production": {
+              "experiments": {
+                "topLevelAwait": true
+            },
               "devServerTarget": "snapperCertificate:serve:production"
             }
           }

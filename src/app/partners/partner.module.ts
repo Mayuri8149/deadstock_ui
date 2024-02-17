@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
+
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { PpBreadcrumbsModule } from 'pp-breadcrumbs';
@@ -25,7 +25,7 @@ import { PartnerRoutingModule } from './partner-routing.module';
     PartnerListComponent,
   ],
   imports: [
-    PdfViewerModule,
+    
     CommonModule,
     PartnerRoutingModule,
     FontAwesomeModule,

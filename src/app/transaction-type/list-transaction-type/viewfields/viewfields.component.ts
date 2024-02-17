@@ -6,7 +6,6 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
-import * as pdfjsLib from 'pdfjs-dist';
 import { Subscription } from 'rxjs';
 import { ApiService } from 'src/app/services/api.service';
 import { DataService } from 'src/app/services/data.service';
@@ -19,9 +18,7 @@ var maxPDFx = 612;
 var maxPDFy = 794;
 var offsetY = 0;
  
-if( pdfjsLib !== undefined ){
-   pdfjsLib.GlobalWorkerOptions.workerSrc = "https://npmcdn.com/pdfjs-dist@2.5.207/build/pdf.worker.js";
-}
+
 
 @Component({
   selector: 'app-viewfields',

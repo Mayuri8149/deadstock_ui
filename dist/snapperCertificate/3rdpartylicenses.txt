@@ -1596,7 +1596,6 @@ SOFTWARE.
 ng2-charts
 ISC
 
-ng2-pdf-viewer
 MIT
 
 ng2-search-filter
@@ -1682,7 +1681,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-pdfjs-dist
 Apache-2.0
 
                                  Apache License

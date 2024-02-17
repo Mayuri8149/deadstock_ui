@@ -1,4 +1,4 @@
-#TracechainUI
+#DeadStockUI
 FROM node:10.13.0-alpine as build-step
 WORKDIR /app
 COPY package.json ./
